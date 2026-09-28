@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tes JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="javascript:login()">
+        <label for="user">Username:</label><br>
+        <input type="text" id="user" name="user"><br>
+        <label for="password">Password:</label><br>
+        <input type="text" id="password" name="password"><br>
+    </form>
+    <script>
+        var user = "MHS001";
+        var password = "BasisA";
+        function login(user, password) {
+            if  (user == "MHS001" && password == "BasisA") {
+                if (user.length <= 6 && 6 <=password.length >= 8) {
+                    document.getElementById("user").innerHTML = "Login Sukses";
+                    document.getElementById("password").innerHTML = "Login Sukses";
+                }
+            }
+            else {
+                document.getElementById("user").innerHTML = "Login Gagal";
+                document.getElementById("password").innerHTML = "Login Gagal";
+            }
+        }
+    </script>
+</body>
+</html>
