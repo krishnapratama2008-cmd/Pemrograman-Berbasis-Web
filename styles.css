@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: whitesmoke;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #222;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    color: white;
+    padding: 16px 24px;
+    background-color: #1f4e78;
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+    margin-top: 8px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+}
+
+header nav a:hover,
+header nav a:focus {
+    text-decoration: underline;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header button,
+.daftar-portofolio button,
+#btn-tambah-portofolio,
+#form-komentar button,
+#btn-hapus-semua-komentar,
+#daftar-komentar button,
+#back-to-top {
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 6px;
+    background-color: #1f4e78;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+}
+
+header button:hover,
+header button:focus,
+.daftar-portofolio button:hover,
+.daftar-portofolio button:focus,
+#btn-tambah-portofolio:hover,
+#btn-tambah-portofolio:focus {
+    background-color: #163955;
+}
+
+#form-komentar button:hover,
+#form-komentar button:focus,
+#btn-hapus-semua-komentar:hover:not(:disabled),
+#btn-hapus-semua-komentar:focus:not(:disabled),
+#daftar-komentar button:hover,
+#daftar-komentar button:focus,
+#back-to-top:hover,
+#back-to-top:focus {
+    background-color: #163955;
+}
+
+#btn-hapus-semua-komentar:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+#back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 10;
+}
+
+#back-to-top[hidden] {
+    display: none;
+}
+
+.tersembunyi {
+    display: none;
+}
+
+body.dark-mode {
+    background-color: #181818;
+    color: #eee;
+}
+
+body.dark-mode main > section,
+body.dark-mode aside {
+    background-color: #262626;
+    border-color: #444;
+}
+
+body.dark-mode aside {
+    background-color: #303030;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 16px;
+}
+
+main > section,
+aside {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+#biodata > ul,
+#biodata ol {
+    padding-left: 24px;
+}
+
+.daftar-portofolio {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.daftar-portofolio article {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+body.dark-mode .daftar-portofolio article {
+    border-color: #555;
+}
+
+#form-komentar {
+    display: grid;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+#input-komentar {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    font: inherit;
+}
+
+#input-komentar[aria-invalid="true"] {
+    border-color: #b42318;
+}
+
+.pesan-error {
+    color: #b42318;
+}
+
+.aksi-komentar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0 10px;
+}
+
+#daftar-komentar {
+    display: grid;
+    gap: 12px;
+    list-style: none;
+}
+
+#daftar-komentar li {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow-wrap: anywhere;
+}
+
+body.dark-mode #daftar-komentar li {
+    border-color: #555;
+}
+
+body.dark-mode #input-komentar {
+    background-color: #303030;
+    border-color: #666;
+    color: #eee;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+aside {
+    background-color: #f2f2f2;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+footer {
+    padding-left: 16px;
+}
+
+@media (min-width: 768px) {
+    header nav {
+        margin-top: 0;
+    }
+
+    main {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+
+    main > section {
+        flex: 1 1 calc(50% - 10px);
+        min-width: 0;
+    }
+
+    #portofolio {
+        flex-basis: 100%;
+    }
+
+    .daftar-portofolio {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 992px) {
+    main {
+        padding: 24px;
+    }
+
+    .daftar-portofolio {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
