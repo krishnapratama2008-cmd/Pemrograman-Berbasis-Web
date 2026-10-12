@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulir Pendaftaran Mahasiswa Baru</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-banner">
+        <span class="badge">PPDB 2026</span>
+        <h1>Pendaftaran Mahasiswa Baru</h1>
+        <p>Silakan lengkapi data pendaftaran dengan benar.</p>
+      </div>
+
+      <form id="formDaftar" novalidate>
+        <section class="form-section">
+          <h2>Data Calon Mahasiswa</h2>
+
+          <label for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" name="nama" required minlength="3" />
+          <span class="error" id="errorNama" aria-live="polite"></span>
+
+          <label for="tempatLahir">Tempat Lahir</label>
+          <input type="text" id="tempatLahir" name="tempatLahir" required />
+          <span class="error" id="errorTempat" aria-live="polite"></span>
+
+          <label for="tanggalLahir">Tanggal Lahir</label>
+          <input type="date" id="tanggalLahir" name="tanggalLahir" required />
+          <span class="error" id="errorTanggal" aria-live="polite"></span>
+
+          <label for="jk">Jenis Kelamin</label>
+          <select id="jk" name="jk" required>
+            <option value="">-- Pilih Jenis Kelamin --</option>
+            <option value="Laki-laki">Laki-laki</option>
+            <option value="Perempuan">Perempuan</option>
+          </select>
+          <span class="error" id="errorJk" aria-live="polite"></span>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+          <span class="error" id="errorEmail" aria-live="polite"></span>
+
+          <label for="telepon">Nomor Telepon</label>
+          <input
+            type="tel"
+            id="telepon"
+            name="telepon"
+            required
+            pattern="[0-9]{10,13}"
+            title="Nomor telepon harus 10-13 angka"
+          />
+          <span class="error" id="errorTelepon" aria-live="polite"></span>
+
+          <label for="alamat">Alamat</label>
+          <textarea id="alamat" name="alamat" required minlength="10"></textarea>
+          <span class="error" id="errorAlamat" aria-live="polite"></span>
+        </section>
+
+        <section class="form-section">
+          <h2>Data Pendidikan</h2>
+
+          <label for="sekolah">Asal Sekolah</label>
+          <input type="text" id="sekolah" name="sekolah" required />
+          <span class="error" id="errorSekolah" aria-live="polite"></span>
+
+          <label for="tahun">Tahun Lulus</label>
+          <input type="number" id="tahun" name="tahun" required min="2000" max="2030" />
+          <span class="error" id="errorTahun" aria-live="polite"></span>
+
+          <label for="fakultas">Fakultas</label>
+          <select id="fakultas" name="fakultas" required>
+            <option value="">-- Pilih Fakultas --</option>
+            <option value="Teknik">Fakultas Teknik</option>
+            <option value="Ekonomi">Fakultas Ekonomi dan Bisnis</option>
+            <option value="Farmasi">Fakultas Farmasi</option>
+            <option value="Psikologi">Fakultas Psikologi</option>
+            <option value="Keguruan dan Ilmu Pendidikan">Fakultas Keguruan dan Ilmu Pendidikan</option>
+            <option value="Sastra">Fakultas Sastra</option>
+          </select>
+          <span class="error" id="errorFakultas" aria-live="polite"></span>
+
+          <label for="prodi">Pilihan Program Studi</label>
+          <select id="prodi" name="prodi" required>
+            <option value="">-- Pilih Fakultas Terlebih Dahulu --</option>
+          </select>
+          <span class="error" id="errorProdi" aria-live="polite"></span>
+        </section>
+
+        <section class="form-section">
+          <h2>Data Orang Tua</h2>
+
+          <label for="ayah">Nama Ayah</label>
+          <input type="text" id="ayah" name="ayah" required />
+          <span class="error" id="errorAyah" aria-live="polite"></span>
+
+          <label for="ibu">Nama Ibu</label>
+          <input type="text" id="ibu" name="ibu" required />
+          <span class="error" id="errorIbu" aria-live="polite"></span>
+
+          <label for="teleponOrtu">Nomor Telepon Orang Tua</label>
+          <input
+            type="tel"
+            id="teleponOrtu"
+            name="teleponOrtu"
+            required
+            pattern="[0-9]{10,13}"
+            title="Nomor telepon harus 10-13 angka"
+          />
+          <span class="error" id="errorTeleponOrtu" aria-live="polite"></span>
+        </section>
+
+        <button type="submit">Kirim Pendaftaran</button>
+        <p id="sukses" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

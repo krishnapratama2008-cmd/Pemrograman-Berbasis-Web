@@ -1,0 +1,233 @@
+:root {
+  --bg-1: #eef4ff;
+  --bg-2: #f6f3ff;
+  --bg-3: #eef9f4;
+  --card: rgba(255, 255, 255, 0.94);
+  --primary: #163d77;
+  --primary-2: #264d8a;
+  --primary-soft: #e8eefc;
+  --accent: #d4a63d;
+  --accent-2: #b36a1a;
+  --accent-soft: #fff1cf;
+  --success: #1b7a4b;
+  --success-soft: #eaf9f1;
+  --error: #b42318;
+  --error-soft: #fef3f2;
+  --text: #1d2a39;
+  --muted: #53657b;
+  --line: #dfe7f5;
+  --shadow: rgba(22, 61, 119, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  background:
+    linear-gradient(135deg, rgba(22, 61, 119, 0.06), transparent 35%),
+    linear-gradient(135deg, var(--bg-1), var(--bg-2), var(--bg-3));
+  color: var(--text);
+}
+
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  background: var(--card);
+  padding: 0;
+  border-radius: 24px;
+  box-shadow: 0 18px 45px var(--shadow);
+  border: 1px solid rgba(22, 61, 119, 0.08);
+  overflow: hidden;
+}
+
+.header-banner {
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  padding: 26px 28px 22px;
+  text-align: center;
+  position: relative;
+}
+
+.header-banner::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--accent), #f2d17a, var(--accent-2));
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 16px 0 8px;
+  color: #ffffff;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  line-height: 1.25;
+}
+
+.header-banner p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  font-size: 1rem;
+}
+
+form {
+  padding: 26px 24px 30px;
+}
+
+.form-section {
+  margin-top: 20px;
+  padding: 22px 18px 16px;
+  background: linear-gradient(180deg, #ffffff, #f7fafd);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--accent);
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(22, 61, 119, 0.04);
+}
+
+.form-section:first-of-type {
+  margin-top: 0;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 1.2rem;
+  color: var(--primary);
+  letter-spacing: 0.02em;
+}
+
+label {
+  display: block;
+  margin: 16px 0 7px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cfd9ea;
+  border-radius: 10px;
+  background-color: #fff;
+  font-size: 1rem;
+  color: var(--text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(22, 61, 119, 0.09);
+  transform: translateY(-1px);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+input.valid,
+select.valid,
+textarea.valid {
+  border-color: var(--success);
+  background-color: var(--success-soft);
+}
+
+input.invalid,
+select.invalid,
+textarea.invalid {
+  border-color: var(--error);
+  background-color: var(--error-soft);
+}
+
+.error {
+  display: block;
+  min-height: 18px;
+  margin-top: 6px;
+  color: var(--error);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+button {
+  width: 100%;
+  margin-top: 24px;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2), var(--accent-2));
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow: 0 12px 22px rgba(22, 61, 119, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 28px rgba(179, 106, 26, 0.2);
+  filter: brightness(1.04);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+#sukses {
+  min-height: 24px;
+  margin-top: 16px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--success);
+}
+
+@media (min-width: 700px) {
+  form {
+    padding: 28px 30px 32px;
+  }
+
+  .form-section {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 22px 14px;
+  }
+
+  .header-banner {
+    padding: 22px 18px 18px;
+  }
+
+  form {
+    padding: 18px 14px 22px;
+  }
+
+  .form-section {
+    padding: 16px 12px;
+  }
+}
